@@ -265,6 +265,9 @@ func extractDiff(f *zip.File, dest string) error {
 	if err := t.Close(); err != nil {
 		return err
 	}
+	if err := os.Chmod(t.Name(), 0644); err != nil {
+		return err
+	}
 	if err := os.Rename(t.Name(), path); err != nil {
 		return err
 	}
