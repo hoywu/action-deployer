@@ -120,7 +120,7 @@ func runJob(j Job) {
 	}
 
 	if err := unzipDiff(
-		filepath.Join(artifactsDir, j.ArtifactName+".zip"),
+		filepath.Join(artifactsDir, key+".zip"),
 		j.DeployPath,
 		j.Excludes,
 	); err != nil {
